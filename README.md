@@ -1,6 +1,7 @@
 # personal-finance-tracker
 function:
 In main_menu
+    
     - 1. View All Transactions
     - 2. View Transactions by Date Range
     - 3. Add Transaction
