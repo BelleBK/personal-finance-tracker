@@ -1,0 +1,12 @@
+Date,Category,Amount,Type,Description,NeedOrWant
+2025-10-25,rent,1000.0,Expense,rent for november,
+2025-10-29,Coffee,8.0,Expense,coffee,Want
+2025-10-29,Food,50.0,Expense,dinner,Want
+2025-09-29,Rent,1000.0,Expense,rent,Need
+2025-09-18,Coffee,17.0,Expense,food and household,Want
+2025-09-18,Grocery,57.0,Expense,food,Need
+2025-10-29,rent,1000.0,Expense,rent,Need
+2025-09-15,Salary,1800.0,Income,Job1,
+2025-09-16,Salary,450.0,Income,Job2,
+2025-10-15,Salary,1600.0,Income,Job1,
+2025-10-16,Salary,450.0,Income,Job2,
