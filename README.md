@@ -9,4 +9,5 @@ In main_menu
     - 5. Delete Transaction
     - 6. Analyze Spending
     - 7. View Charts
-    - 8. Exit
+    - 8. Budget Management
+    - 9. Exit
