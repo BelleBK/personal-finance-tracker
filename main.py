@@ -10,8 +10,8 @@ def main_menu():
     print("3. Add Transaction")
     print("4. Edit Transaction")
     print("5. Delete Transaction")
-    print("6. Analyze Spending")
-    print("7. View Charts")
+    print("6. Analyze Spending(more)")
+    print("7. View Charts(more)")
     print("8. Exit")
 
     choice = input("Enter your choice: ")

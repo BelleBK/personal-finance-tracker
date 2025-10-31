@@ -18,9 +18,13 @@ def view_transactions():
     if df.empty:
         print("\nNo transactions found.")
     else:
-        df.index = range(1, len(df) + 1)  # Make index start from 1
-        print("\nAll Transactions:")
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        df = df.sort_values(by="Date" , ascending=False)
+        df.index = range(1, len(df) + 1)
+        print("\nAll Transactions (Sorted by Date):")
         print(df)
+
+
 #View transactions by date range
 def view_by_date_range():
     df = load_data()

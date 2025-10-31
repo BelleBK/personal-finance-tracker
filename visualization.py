@@ -37,6 +37,7 @@ def spending_by_category(df):
         print("\nNo expense data found for visualization.")
         return
 
+    expenses["Category"] = expenses["Category"].str.title()
     category_sum = expenses.groupby("Category")["Amount"].sum().sort_values(ascending=False)
 
     plt.figure(figsize=(8, 5))
@@ -54,7 +55,7 @@ def percentage_distribution(df):
     if expenses.empty:
         print("\nNo expense data found for visualization.")
         return
-
+    expenses["Category"] = expenses["Category"].str.title()
     category_sum = expenses.groupby("Category")["Amount"].sum()
 
     plt.figure(figsize=(6, 6))
