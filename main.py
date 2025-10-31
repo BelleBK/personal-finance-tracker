@@ -1,7 +1,7 @@
-#The main script that runs the app and handles the user interface.
 import data_management
 import data_analysis
 import visualization
+import budget_management
 
 def main_menu():
     print("\n==== Personal Financial Tracker ====")
@@ -10,12 +10,11 @@ def main_menu():
     print("3. Add Transaction")
     print("4. Edit Transaction")
     print("5. Delete Transaction")
-    print("6. Analyze Spending(more)")
-    print("7. View Charts(more)")
-    print("8. Exit")
-
-    choice = input("Enter your choice: ")
-    return choice
+    print("6. Spending Analysis")
+    print("7. View Charts")
+    print("8. Budget Management")
+    print("9. Exit")
+    return input("Enter your choice: ")
 
 def main():
     print("Welcome to Personal Financial Tracker!")
@@ -37,9 +36,13 @@ def main():
             data_analysis.analyze_spending()
         elif choice == '7':
             visualization.show_charts()
+        elif choice == '8':
+            budget_management.manage_budget()
+        elif choice == '9':
+            print("Thank you for using the app. Goodbye!")
+            break
         else:
             print("Invalid option, please try again.")
 
 if __name__ == "__main__":
     main()
-

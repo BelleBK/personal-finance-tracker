@@ -82,29 +82,44 @@ def edit_transaction():
         return
 
     df.index = range(1, len(df) + 1)
+    print("\nAll Transactions:")
     print(df)
 
     try:
-        index = int(input("Enter the transaction number to edit: ")) - 1
+        index = int(input("\nEnter the transaction number to edit: ")) - 1
         if index not in df.index:
             print("Invalid transaction number.")
             return
 
-        column = input("Enter column name to edit (Date, Category, Description, Amount, Type, NeedOrWant): ")
+        print("\nCurrent Transaction Details:")
+        print(f"Date: {df.loc[index, 'Date']}")
+        print(f"Category: {df.loc[index, 'Category']}")
+        print(f"Description: {df.loc[index, 'Description']}")
+        print(f"Amount: {df.loc[index, 'Amount']}")
+        print(f"Type: {df.loc[index, 'Type']}")
+        if 'NeedOrWant' in df.columns:
+            print(f"NeedOrWant: {df.loc[index, 'NeedOrWant']}")
+
+        column = input("\nEnter column name to edit (Date, Category, Description, Amount, Type, NeedOrWant): ").strip()
         if column not in df.columns:
             print("Invalid column name.")
             return
 
-        new_value = input("Enter new value: ")
+        new_value = input(f"Enter new value for '{column}': ")
+
         if column == "Amount":
             new_value = float(new_value)
 
         df.at[index, column] = new_value
         df.to_csv("transactions.csv", index=False)
-        print("✅ Transaction updated successfully!")
+        print("\n✅ Transaction updated successfully!")
+
+        print("\nUpdated Transaction Details:")
+        print(df.loc[index])
 
     except Exception as e:
         print("Error editing transaction:", e)
+
 
 #Delete transaction
 def delete_transaction():
